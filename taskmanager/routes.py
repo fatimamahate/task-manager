@@ -3,7 +3,7 @@ from taskmanager import app, db
 from taskmanager.models import Category, Task
 
 
-@app.route("/")
+@app.route("/tasks")
 def home():
     tasks = list(Task.query.order_by(Task.id).all())
     return render_template("tasks.html", tasks=tasks)
